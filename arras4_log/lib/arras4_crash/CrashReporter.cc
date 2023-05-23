@@ -248,9 +248,9 @@ CrashReporter::dumpCallback(const google_breakpad::MinidumpDescriptor& descripto
         }
 
         // make the call "python {breakpadProcess} {.dmp} {/symbols} {application} {stackTracePath}"
-        system(command); // note that the system() call is implemented useing fork() and exec()
+        int ret = system(command); // note that the system() call is implemented useing fork() and exec()
                          // so a new process will be created to do this work, as desired.
-        _exit(0);    // terminate the child process immediately
+        _exit(ret);    // terminate the child process immediately
     }
 
     return false;  // returning false tells Breakpad to treat the exception as unhandled, allowing

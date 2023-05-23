@@ -20,12 +20,15 @@ set_property(TARGET ${LibName}
 )
 
 target_link_libraries(${LibName}
+    PRIVATE
+        ${Breakpad_LIBRARY} 
     PUBLIC
-        breakpad
-        boost_headers
+        Boost::filesystem
 )
 
 target_include_directories(${LibName} 
+    PRIVATE
+        ${Breakpad_INCLUDE_DIR}
     PUBLIC 
         $<BUILD_INTERFACE:${BuildIncludeDir}>
         $<INSTALL_INTERFACE:include>)

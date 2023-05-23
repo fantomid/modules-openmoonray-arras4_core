@@ -41,6 +41,8 @@ if(${PROJECT_NAME_UPPER}_BUILD_TESTING)
     find_package(CppUnit REQUIRED)
 endif()
 
+find_package(Breakpad)
+
 # ================================================
 # Set the RPATH for binaries in the install tree
 # ================================================

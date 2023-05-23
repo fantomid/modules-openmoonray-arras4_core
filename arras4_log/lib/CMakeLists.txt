@@ -4,6 +4,7 @@
 add_subdirectory(arras4_athena)
 add_subdirectory(arras4_log)
 
-# arras4_crash not supported yet in cmake build, because
-# of breakpad dependency
-# add_subdirectory(arras4_crash)
+# Breakpad dependency
+if(Breakpad_FOUND)
+    add_subdirectory(arras4_crash)
+endif()
