@@ -214,7 +214,7 @@ main(int argc, char* argv[])
     std::string breakpadPath;
     const char *tmp = getenv("ARRAS_BREAKPAD_PATH");
     if (tmp != nullptr) breakpadPath = tmp;
-    const std::string& compName = config["config"].begin().memberName();
+    const std::string& compName = config["config"].begin().name();
     const std::string& dsoName = (*config["config"].begin())["dso"].asString();
     INSTANCE_CRASH_REPORTER_WITH_INSTALL_PATH(argv[0], breakpadPath, sessionId, compName, dsoName);
 #endif

@@ -26,6 +26,7 @@ target_link_libraries(${CmdName}
         Boost::filesystem
         Libatomic::Libatomic
         pthread
+        jsoncpp
 )
 
 # prevent use of crash reporter since it isn't yet supported

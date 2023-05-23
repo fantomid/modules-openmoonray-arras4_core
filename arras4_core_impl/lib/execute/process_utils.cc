@@ -52,6 +52,7 @@ int countProcessGroupMembers(pid_t aPgid)
 
     int memberCount = 0;
     do {
+        // TODO: deprecated
         readdir_r(dir, &entry, &result);
         if (result != NULL) {
             if (isdigit(entry.d_name[0])) {

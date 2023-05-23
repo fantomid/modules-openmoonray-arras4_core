@@ -367,7 +367,7 @@ getComputationDetails(std::map<std::string,Node>& nodes, std::map<std::string,Se
 			    std::string name;
 			    if (apiVersion == "4.5") {
 				// "computations" is an object
-				name = it.memberName();
+				name = it.name();
 				compPerf = &sessionPerf["computations"][name];
 			    } else {
 				// "computations" is an array

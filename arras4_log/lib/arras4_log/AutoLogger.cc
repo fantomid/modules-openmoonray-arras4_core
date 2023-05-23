@@ -142,6 +142,7 @@ OutputCapture::logThreadFunc()
 OutputCapture::~OutputCapture()
 {
     // send a special string to indicate to stop the thread
+    // TODO: warning: ignoring return value of 'ssize_t write
     write(mOriginalFd, "\nClosing stream prefixer\n", 25);
 
     // finish shutting down the threads

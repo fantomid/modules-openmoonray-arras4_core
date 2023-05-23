@@ -25,6 +25,7 @@ namespace {
 void
 sigtermHandler(int /*aSignal*/, siginfo_t* /*aSigInfo*/, void* /*aCtx*/)
 {
+    // TODO: warning: ignoring return value of 'ssize_t write
     write(0, "In signal handler\n", strlen("In signal handler\n"));
 }
 

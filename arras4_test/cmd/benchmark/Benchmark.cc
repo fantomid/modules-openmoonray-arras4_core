@@ -437,8 +437,8 @@ subset(const Json::Value& aSubset, const Json::Value& aSuperset,
             unsigned int index = 0;
             Json::ValueIterator iter = aSubset.begin();
             while (iter != aSubset.end()) {
-                const char* memberName = iter.memberName();
-                std::string name = aVarName + "." + iter.memberName();
+                const char* memberName = iter.name();
+                std::string name = aVarName + "." + iter.name();
                 Json::Value value = aSuperset[memberName];
                 if (value.isNull()) {
                     if (aPrintError) {

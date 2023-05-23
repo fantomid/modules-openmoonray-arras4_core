@@ -117,11 +117,10 @@ subset(const Json::Value& aSubset, const Json::Value& aSuperset,
       case Json::objectValue:
         {
             unsigned int index = 0;
-            Json::ValueIterator iter = aSubset.begin();
+            Json::ValueConstIterator iter = aSubset.begin();
             while (iter != aSubset.end()) {
-                const char* memberName = iter.memberName();
-                std::string name = aVarName + "." + iter.memberName();
-                Json::Value value = aSuperset[memberName];
+                std::string name = aVarName + "." + iter.name();
+                Json::Value value = aSuperset[iter.name()];
                 if (value.isNull()) {
                     if (aPrintError) {
                         ARRAS_LOG_ERROR("Superset is missing %s", name.c_str());
