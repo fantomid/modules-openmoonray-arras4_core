@@ -29,8 +29,6 @@ target_link_libraries(${CmdName}
         jsoncpp
 )
 
-# prevent use of crash reporter since it isn't yet supported
-target_compile_definitions(${CmdName} PRIVATE DONT_USE_CRASH_REPORTER)
 
 
 # Set standard compile/link options
